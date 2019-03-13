@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>测试switch</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  <div class="sw-switch sw-common">
+    <!-- 原始背景层 -->
+    <div class="sw-wrap sw-common"></div>
+    <!-- 文本层 -->
+    <div class="sw-area sw-common">
+      <div class="sw-troggle">左边</div>
+      <div class="sw-troggle">右边</div>
+    </div>
+    <!-- 激活背景层 -->
+    <div id="swBkg" class="sw-bkg sw-common"></div>
+  </div>
+</body>
+<script src="./jquery.js"></script>
+<script>
+  var swBkgPosition = 0;
+  $('.sw-troggle').on('click', function() {
+    var curIndex = $(this).index();
+    if (swBkgPosition == curIndex) {
+      return
+    }
+    swBkgPosition = curIndex;
+    console.log($(this).index())
+
+    //从左到右切换
+    var swBkg = $('#swBkg');
+    if (swBkgPosition == 1) {
+      swBkg.removeClass('translateToLeft').addClass('translateToRight');
+    } else {
+      swBkg.removeClass('translateToRight').addClass('translateToLeft');
+    }
+  })
+</script>
+</html>

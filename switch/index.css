@@ -1,0 +1,77 @@
+.sw-switch {
+  position: relative;
+  width: 400px;
+  margin: auto;
+}
+
+.sw-wrap {
+  position: absolute;
+  top: 0;
+  width: 400px;
+  background-color: #b9b9b9;
+  box-shadow: 1px 1px 1px #b9b9b9;
+  z-index: 0;
+}
+
+.sw-common {
+  height: 44px;
+  line-height: 44px;
+  border-radius: 22px;
+}
+
+.sw-area {
+  position: absolute;
+  display: flex;
+  top: 0;
+  width: 400px;
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+  z-index: 2;
+}
+
+.sw-area > div {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.sw-bkg {
+  position: absolute;
+  top: 0;
+  width: 200px;
+  background-color: #ff0000 !important;
+  box-shadow: 1px 1px 1px #ff0000;
+  z-index: 1;
+}
+
+.translateToRight {
+  animation: leftToRight .2s ease-in;
+  transform: translateX(200px);
+  animation-fill-mode: forwards;
+}
+
+@keyframes leftToRight {
+  from  {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(200px);
+  }
+}
+
+.translateToLeft {
+  animation: rightToLeft .2s ease-in;
+  transform: translateX(200px);
+  animation-fill-mode: forwards;
+}
+
+@keyframes rightToLeft {
+  from  {
+    transform: translateX(200px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
