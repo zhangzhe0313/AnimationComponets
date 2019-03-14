@@ -31,12 +31,15 @@
     swBkgPosition = curIndex;
 
     //从左到右切换
-    var swBkg = $('#swBkg');
+    var swBkg = $('#swBkg'),
+        swArea = $('.sw-area');
     if (swBkgPosition == 1) {
       swBkg.removeClass('translateToLeft').addClass('translateToRight');
     } else {
       swBkg.removeClass('translateToRight').addClass('translateToLeft');
     }
+    swArea.children().eq(1 - swBkgPosition).removeClass('sw-font-color-fff');
+    swArea.children().eq(swBkgPosition).addClass('sw-font-color-fff');
   })
 </script>
 </html>
